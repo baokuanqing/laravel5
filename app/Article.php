@@ -33,5 +33,9 @@ class Article extends Model
     // foreach($articles as $article){
     // 	echo $article->title;
     // }
+    public function hasManyComments()
+    {
+        return $this->hasMany('App\Comment','article_id','id');
+    }
 
 }

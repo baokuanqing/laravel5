@@ -29,8 +29,13 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     // Route::get('/','HomeController@index');
 	// Route::get('article','ArticleController@index');
 	Route::resource('articles','ArticleController');
+	Route::resource('edit','ArticleController@edit');
 	
 });
 
+Route::get('article/{id}','ArticleController@show');
+// Route::post('comment','CommentController');
+Route::post('comment', 'CommentController@store');
 
-Route::resource('photo', 'PhotoController');
+
+// Route::resource('photo', 'PhotoController');
